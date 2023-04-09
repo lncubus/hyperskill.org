@@ -1,0 +1,38 @@
+﻿What is the game finish condition?
+when no cards are in the cardsdeck  + no cards are in hand for both human + comp
+
+When a player wins the cards on the table, how should I calculate his/her/computer scores?
+Add one score for each A, 10, J, Q, K card (other cards cost zero) from the table.
+A card that was used to win everthing on table counts also!
+
+When to add 3 extra scores (according the rules) to a player?
+when the end of the game is reached
+
+At the end of a game, when all score calculations are perfomed, you can see some cards 
+remain on the table (if any). Just add them to last a card winner pocket or first player(according the rules). YOu don't need to calculate their scores, just show statistics like this:
+
+Score: Player 12 - Computer X
+Cards: Player 40 - Computer X
+
+Do not show statisitcs if a user typed "exit", just print Game Over
+
+
+Strategy for a computer player can be expressed much more simply if you think in a functional style. Then you can completely get rid of a nightmare of logical branching.
+
+What transformations should be applied in series to the player's hand to get a list of cards suitable for the move? 
+
+Cards suitable to play is a list of cards from the player's hand that can beat the table (an empty table can be beaten by any card) or the whole hand if the list is empty. From the resulting list, we leave only cards with the same suit. If we got an empty list, then we leave the cards with the same values. If we get an empty list, then we use the entire original list.
+
+Choose a random card from this list. The choice does not depend on the situation on the table and the number of cards the player has.
+
+
+Player wins cards
+Score: Player 3 - Computer 0
+Score: Player 5 - Computer 0
+No cards on the table
+Computer plays 6♣
+1 cards on the table, and the top card is 6♣
+Cards in hand: 1)J♣ 2)6♠ 3)Q♥ 4)4♠ 5)3♠
+Choose a card to play (1-5):
+
+Score: Player 3 - Computer 0
